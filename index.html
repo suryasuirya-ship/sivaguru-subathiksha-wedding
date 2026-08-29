@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f6f1e7">
+<title>S. Subathiksha & S. Sivaguru — Wedding Invitation</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap');
+:root{--green:#244735;--gold:#b58a4a;--cream:#f7f2e8;--paper:#fffdf8;--line:#decbaa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:#26362e;font-family:Montserrat,Arial,sans-serif;overflow-x:hidden;background:#f5efe4}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:
+radial-gradient(circle at 7% 12%,rgba(205,178,129,.25),transparent 25%),
+radial-gradient(circle at 92% 18%,rgba(143,166,139,.25),transparent 28%),
+radial-gradient(circle at 85% 78%,rgba(174,126,129,.18),transparent 25%),
+radial-gradient(circle at 14% 82%,rgba(211,190,148,.20),transparent 27%),
+linear-gradient(135deg,#fbf8f0 0%,#f2ede2 42%,#edf0e8 72%,#f7f0e6 100%)}
+body:after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.11;background-image:radial-gradient(#665844 .6px,transparent .6px);background-size:10px 10px}
+.container{width:min(1100px,92%);margin:auto}
+.toolbar{position:fixed;top:18px;left:0;right:0;z-index:50;display:flex;justify-content:space-between;padding:0 22px}
+.toolbar button{border:0;background:#fffffff0;color:var(--green);border-radius:999px;padding:12px 18px;cursor:pointer;box-shadow:0 8px 28px #403a2c18;font:500 12px Montserrat;transition:.3s}
+.toolbar button:hover{transform:translateY(-2px)}
+.hero{min-height:100vh;display:flex;align-items:center;padding:85px 0 55px;position:relative;background:radial-gradient(circle at 50% 48%,rgba(255,255,255,.55),transparent 58%)}
+.hero-inner{display:grid;grid-template-columns:44% 56%;align-items:center;gap:35px;width:100%}
+.photo-wrap{position:relative;display:flex;justify-content:center;animation:photoIn 1.6s cubic-bezier(.2,.8,.2,1) both}
+.photo-wrap:before{content:"";position:absolute;width:92%;height:96%;border:1px solid #c89e5d;top:2%;left:4%;border-radius:48% 48% 42% 42%;transform:rotate(-5deg);animation:spinIn 1.8s ease both}
+.photo-wrap:after{content:"";position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,#e6d4b0aa,transparent 66%);z-index:-1;animation:pulse 4s ease-in-out infinite}
+.couple-photo{width:min(430px,100%);height:650px;object-fit:cover;border-radius:48% 48% 43% 43%;box-shadow:0 25px 70px #43533e22;position:relative;z-index:2;animation:float 6s ease-in-out infinite}
+.copy{text-align:center;animation:textIn 1.5s .25s both}
+.kicker{letter-spacing:4px;font-size:11px;margin-bottom:25px}
+.names{margin:0;color:var(--green);font:500 clamp(55px,7vw,94px)/.82 "Cormorant Garamond",serif}
+.and{color:var(--gold);font:500 39px "Cormorant Garamond";margin:23px 0}
+.subtitle{color:#8d6b3b;letter-spacing:5px;font-size:12px;margin:28px 0}
+.divider{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);margin:22px 0}.divider:before,.divider:after{content:"";width:80px;height:1px;background:var(--line)}
+.count-label{font-size:11px;letter-spacing:3px;margin-top:35px}.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px auto 0;max-width:570px}
+.time{background:#ffffffc9;border:1px solid #e1d2b8;border-radius:13px;padding:14px 5px;box-shadow:0 8px 25px #4b493d0c}.time b{display:block;font:600 32px "Cormorant Garamond";color:var(--green)}.time span{font-size:9px;letter-spacing:1.5px;color:#777}
+.date-line{font-size:12px;letter-spacing:2px;margin-top:20px}
+section{padding:75px 0}.title{text-align:center;color:var(--green);font:600 46px "Cormorant Garamond";margin:0 0 12px}.intro{text-align:center;color:#777;max-width:640px;margin:0 auto 40px;line-height:1.8;font-size:13px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:25px}.card{background:#fffdf9ee;border:1px solid #dfceb1;border-radius:24px;padding:25px;box-shadow:0 20px 60px #35463810;opacity:0;transform:translateY(35px);transition:.8s}
+.card.show{opacity:1;transform:none}
+.venue-art{height:210px;border-radius:18px;overflow:hidden;margin-bottom:24px;background:linear-gradient(135deg,#e7ddca,#dfe8de);display:flex;align-items:center;justify-content:center}
+.venue-art img{width:100%;height:100%;object-fit:cover}
+.art-symbol{font-size:70px;color:#7c6948}
+.card h3{margin:0 0 20px;color:var(--green);font:600 38px "Cormorant Garamond"}
+.detail{display:flex;gap:15px;margin:13px 0;font-size:13px;line-height:1.6}.label{min-width:58px;color:#948469;text-transform:uppercase;font-size:9px;letter-spacing:1.2px;padding-top:3px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.actions a{text-decoration:none;border:1px solid var(--green);color:var(--green);border-radius:9px;padding:11px 14px;font-size:10px;letter-spacing:.6px}.actions a.primary{background:var(--green);color:white}
+.note{text-align:center;padding:75px 20px;background:#ffffff35;color:#88683a;font:500 31px "Cormorant Garamond"}
+footer{text-align:center;padding:30px;color:#888;font-size:9px;letter-spacing:2px}
+@keyframes photoIn{from{opacity:0;transform:translateX(-80px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes textIn{from{opacity:0;transform:translateX(70px)}to{opacity:1;transform:none}}
+@keyframes spinIn{from{opacity:0;transform:rotate(-25deg) scale(.8)}to{opacity:1;transform:rotate(-5deg) scale(1)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pulse{0%,100%{transform:scale(.97);opacity:.45}50%{transform:scale(1.04);opacity:.75}}
+
+.floating-garden{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.floating-garden span{position:absolute;display:block}
+.flower{font-family:Georgia,serif;font-size:30px;color:#b58a4a;text-shadow:0 2px 12px rgba(181,138,74,.22);animation:flowerFloat 9s ease-in-out infinite}
+.f1{left:4%;top:18%;animation-delay:-1s}.f2{right:5%;top:38%;color:#9a7a4b;animation-delay:-4s}
+.f3{left:7%;bottom:18%;color:#8c9b78;animation-delay:-6s}.f4{right:9%;bottom:12%;color:#b98f72;animation-delay:-2s}
+.leaf{font-size:32px;filter:saturate(.65) sepia(.15);opacity:.42;animation:leafDrift 13s linear infinite}
+.l1{left:12%;top:-6%;animation-delay:-2s}.l2{left:35%;top:-8%;animation-delay:-8s}
+.l3{right:25%;top:-5%;animation-delay:-5s}.l4{right:8%;top:-10%;animation-delay:-10s}
+.petal{width:8px;height:8px;border-radius:50%;background:#c7a66f;opacity:.48;box-shadow:0 0 12px #ef9bb255;animation:petalFall 8s linear infinite}
+.p1{left:20%;top:-5%;animation-delay:-1s}.p2{left:42%;top:-7%;animation-delay:-5s}
+.p3{left:62%;top:-3%;animation-delay:-7s}.p4{left:76%;top:-8%;animation-delay:-3s}
+.p5{left:88%;top:-5%;animation-delay:-6s}.p6{left:52%;top:-6%;animation-delay:-9s}
+@keyframes flowerFloat{0%,100%{transform:translate3d(0,0,0) rotate(-8deg) scale(1)}50%{transform:translate3d(12px,-18px,0) rotate(10deg) scale(1.12)}}
+@keyframes leafDrift{0%{transform:translate3d(0,-80px,0) rotate(0deg);opacity:0}10%{opacity:.7}50%{transform:translate3d(45px,50vh,0) rotate(170deg)}90%{opacity:.55}100%{transform:translate3d(-25px,110vh,0) rotate(340deg);opacity:0}}
+@keyframes petalFall{0%{transform:translate3d(0,-20px,0) rotate(0);opacity:0}12%{opacity:.8}50%{transform:translate3d(35px,55vh,0) rotate(180deg)}100%{transform:translate3d(-30px,110vh,0) rotate(360deg);opacity:0}}
+.hero,.card,.note,footer{position:relative;z-index:2}
+.card{background:rgba(255,255,255,.76);backdrop-filter:blur(10px)}
+
+@media(max-width:800px){.hero-inner{grid-template-columns:1fr;gap:35px}.copy{order:-1}.couple-photo{height:510px;width:min(350px,100%)}.names{font-size:66px}.cards{grid-template-columns:1fr}.toolbar{padding:0 10px}}
+@media(max-width:450px){.names{font-size:58px}.countdown{gap:7px}.time b{font-size:28px}.photo-wrap{margin-top:10px}.couple-photo{height:470px}.hero{padding-top:100px}}
+</style>
+</head>
+<body>
+
+<div class="floating-garden" aria-hidden="true">
+  <span class="flower f1">✿</span><span class="flower f2">✿</span>
+  <span class="flower f3">❀</span><span class="flower f4">✿</span>
+  <span class="leaf l1">🍃</span><span class="leaf l2">🍃</span>
+  <span class="leaf l3">🌿</span><span class="leaf l4">🍃</span>
+  <span class="petal p1">•</span><span class="petal p2">•</span>
+  <span class="petal p3">•</span><span class="petal p4">•</span>
+  <span class="petal p5">•</span><span class="petal p6">•</span>
+</div>
+
+<div class="toolbar">
+<button id="musicBtn">♫ &nbsp; Play Music</button>
+<button id="shareBtn">⌯ &nbsp; Share Invite</button>
+</div>
+
+<header class="hero">
+<div class="container hero-inner">
+  <div class="photo-wrap">
+    <img class="couple-photo" src="couple.jpg" alt="S. Subathiksha and S. Sivaguru">
+  </div>
+  <div class="copy">
+    <div class="kicker">TOGETHER WITH THEIR FAMILIES</div>
+    <h1 class="names">S. Subathiksha</h1>
+    <div class="and">♥ &nbsp; and &nbsp; ♥</div>
+    <h1 class="names">S. Sivaguru</h1>
+    <div class="subtitle">ARE GETTING MARRIED!</div>
+    <div class="divider">❧</div>
+    <div class="count-label">COUNTING DOWN TO OUR BIG DAY</div>
+    <div class="countdown">
+      <div class="time"><b id="days">--</b><span>DAYS</span></div>
+      <div class="time"><b id="hours">--</b><span>HOURS</span></div>
+      <div class="time"><b id="mins">--</b><span>MINUTES</span></div>
+      <div class="time"><b id="secs">--</b><span>SECONDS</span></div>
+    </div>
+    <div class="date-line">◷ &nbsp; 13 SEPTEMBER 2026</div>
+  </div>
+</div>
+</header>
+
+<section>
+<div class="container">
+<h2 class="title">The Celebration</h2>
+<p class="intro">With joyful hearts, we invite you to be part of our special day and celebrate the beginning of a beautiful new chapter.</p>
+<div class="cards">
+<article class="card">
+  <div class="venue-art"><img src="wedding-venue.jpeg" alt="Sri Sivasubramaniyan Swami Sannathi, Mailam"></div>
+  <h3>Wedding Ceremony</h3>
+  <div class="detail"><span class="label">Date</span><span>13.09.2026, Sunday</span></div>
+  <div class="detail"><span class="label">Time</span><span>7.00 AM to 9.00 AM</span></div>
+  <div class="detail"><span class="label">Venue</span><span><strong>Sri Sivasubramaniyan Swami Sannathi, Mailam</strong><br>Mailam, Villupuram, Tamil Nadu</span></div>
+  <div class="actions">
+    <a class="primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=12.130226573954614,79.61484233547247">⌖ &nbsp; VIEW LOCATION</a>
+    <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=12.130226573954614,79.61484233547247">➜ &nbsp; GET DIRECTIONS</a>
+  </div>
+</article>
+<article class="card">
+  <div class="venue-art"><img src="reception-hall.png" alt="Jayasree Mahal, Vikravandi Tollgate"></div>
+  <h3>Reception</h3>
+  <div class="detail"><span class="label">Date</span><span>13.09.2026, Sunday</span></div>
+  <div class="detail"><span class="label">Time</span><span>6.00 PM to 7.30 PM</span></div>
+  <div class="detail"><span class="label">Venue</span><span><strong>Jayasree Mahal, Vikravandi Tollgate</strong><br>Vikravandi Tollgate, Tamil Nadu</span></div>
+  <div class="actions">
+    <a class="primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Jayasree+Mahal+Vikravandi+Tollgate">⌖ &nbsp; VIEW LOCATION</a>
+    <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=Jayasree+Mahal+Vikravandi+Tollgate">➜ &nbsp; GET DIRECTIONS</a>
+  </div>
+</article>
+</div>
+</div>
+</section>
+
+<div class="note">“Your presence will make our day even more special.”<br><span>♥</span></div>
+<footer>S. SUBATHIKSHA &amp; S. SIVAGURU · 13.09.2026</footer>
+
+<script>
+const wedding=new Date("2026-09-13T07:00:00+05:30").getTime();
+function countdown(){
+ let diff=Math.max(0,wedding-Date.now()),s=Math.floor(diff/1000);
+ days.textContent=Math.floor(s/86400);
+ hours.textContent=String(Math.floor(s%86400/3600)).padStart(2,"0");
+ mins.textContent=String(Math.floor(s%3600/60)).padStart(2,"0");
+ secs.textContent=String(s%60).padStart(2,"0");
+}
+countdown();setInterval(countdown,1000);
+
+const observer=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("show")),{threshold:.15});
+document.querySelectorAll(".card").forEach(x=>observer.observe(x));
+
+shareBtn.onclick=async()=>{
+ const data={title:"S. Subathiksha & S. Sivaguru — Wedding Invitation",text:"Join us for our wedding on 13 September 2026.",url:location.href};
+ try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);alert("Invitation link copied!")}}catch(e){}
+};
+
+// Uploaded wedding music.
+// Browsers require a user gesture before audio can begin.
+const music = new Audio("wedding-music.mp3");
+music.loop = true;
+music.preload = "auto";
+music.volume = 0.45;
+
+async function startMusic() {
+  try {
+    await music.play();
+    musicBtn.textContent = "❚❚  Pause Music";
+    return true;
+  } catch (e) {
+    // Modern browsers may block autoplay until the visitor interacts.
+    return false;
+  }
+}
+
+musicBtn.onclick = async () => {
+  if (music.paused) {
+    await startMusic();
+  } else {
+    music.pause();
+    musicBtn.textContent = "♫  Play Music";
+  }
+};
+
+// Try to start automatically as soon as the invitation opens.
+// If the browser blocks autoplay, the first click/tap anywhere on the page
+// will start the music automatically.
+window.addEventListener("load", () => {
+  startMusic();
+});
+
+["click", "touchstart", "keydown"].forEach(eventName => {
+  document.addEventListener(eventName, () => {
+    if (music.paused) startMusic();
+  }, {once:true, passive:true});
+});
+</script>
+</body>
+</html>
